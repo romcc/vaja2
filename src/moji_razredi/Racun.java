@@ -74,8 +74,8 @@ public class Racun implements Searchable{
 
     @Override
     public String toString() {
-        String str = "Št. Računa: " + id + "\nDavčna številka podjetja: " + davcnaPodjetja + "\nDatum izdaje: " + datum + "\n\nArtikli:\n" + artikli.toString() + "\nSkupna cena: " + skupnaCena / 100 + "." + skupnaCena % 100 +
-                "€\nSkupna cena z DDV: " + skupnaCenaDDV / 100 + "." + skupnaCenaDDV % 100 + "€\n" + "DDV %: " + davcnaStopnja + "%\nRačun izdal: " + pod.getIme() + "\nDavcni Zavezanec: " + jeDavcniZavezanec() + "\n";
+        String str = "Št. Računa: " + id + "%\nRačun izdal: " + pod.getIme() + "\nDavcni Zavezanec: " + jeDavcniZavezanec() + "\nDavčna številka podjetja: " + davcnaPodjetja + "\nDatum izdaje: " + datum + "\n\nArtikli:\n" + artikli.toString() + "\nSkupna cena: " + skupnaCena / 100 + "." + skupnaCena % 100 +
+                "€\nSkupna cena z DDV: " + skupnaCenaDDV / 100 + "." + skupnaCenaDDV % 100 + "€\n" + "DDV %: " + davcnaStopnja + "\n";
         return str;
     }
 
