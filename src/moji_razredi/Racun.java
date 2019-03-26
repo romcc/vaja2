@@ -9,14 +9,12 @@ public class Racun implements Searchable{
     private int skupnaCena;
     private int skupnaCenaDDV;
     private int davcnaStopnja;
-    private String izdajatelj;
     private Podjetje pod;
     private int davcnaPodjetja;
 
-    public Racun(String izdajatelj, Podjetje podjetje, int davcnaStopnja){
+    public Racun(Podjetje podjetje, int davcnaStopnja){
         stevec++;
         this.id = stevec;
-        this.izdajatelj = izdajatelj;
         this.datum = new Date();
         this.pod = podjetje;
         this.davcnaPodjetja = podjetje.getDavcnaStevilka();
@@ -26,10 +24,9 @@ public class Racun implements Searchable{
         this.davcnaStopnja = davcnaStopnja;
     }
 
-    public Racun(String izdajatelj, Podjetje podjetje, Artikli artikli, int davcnaStopnja){
+    public Racun(Podjetje podjetje, Artikli artikli, int davcnaStopnja){
         stevec++;
         this.id = stevec;
-        this.izdajatelj = izdajatelj;
         this.datum = new Date();
         this.pod = podjetje;
         this.davcnaPodjetja = podjetje.getDavcnaStevilka();
@@ -78,16 +75,13 @@ public class Racun implements Searchable{
     @Override
     public String toString() {
         String str = "Št. Računa: " + id + "\nDavčna številka podjetja: " + davcnaPodjetja + "\nDatum izdaje: " + datum + "\n\nArtikli:\n" + artikli.toString() + "\nSkupna cena: " + skupnaCena / 100 + "." + skupnaCena % 100 +
-                "€\nSkupna cena z DDV: " + skupnaCenaDDV / 100 + "." + skupnaCenaDDV % 100 + "€\n" + "DDV %: " + davcnaStopnja + "%\nRačun izdal: " + izdajatelj + "\n";
+                "€\nSkupna cena z DDV: " + skupnaCenaDDV / 100 + "." + skupnaCenaDDV % 100 + "€\n" + "DDV %: " + davcnaStopnja + "%\nRačun izdal: " + pod.getIme() + "\nDavcni Zavezanec: " + jeDavcniZavezanec() + "\n";
         return str;
     }
 
     @Override
     public boolean Search(String string) {
-        if (izdajatelj.toLowerCase().contains(string.toLowerCase())){
-            return true;
-        }
-        else if (String.valueOf(datum).contains(string)) {
+        if (String.valueOf(datum).contains(string)) {
             return true;
         }
         else if (String.valueOf(skupnaCena).contains(string)) {

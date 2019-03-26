@@ -37,6 +37,10 @@ public class Podjetje implements Searchable{
         return false;
     }
 
+    public String getIme() {
+        return ime;
+    }
+
     public int getDavcnaStevilka() {
         return davcnaStevilka;
     }

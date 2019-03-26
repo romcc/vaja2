@@ -21,9 +21,9 @@ public class Main {
         artikli.dodaj(kemik, 1);
         artikli.dodaj(geotrikotnik, 2);
 
-        Racun racun = new Racun("blagajnik", podjetje1, artikli, 22);
-        Racun racun2 = new Racun("blagajnik", podjetje2, 22);
-        Racun racun3 = new Racun("blagajnik", podjetje3, 22);
+        Racun racun = new Racun(podjetje1, artikli, 22);
+        Racun racun2 = new Racun(podjetje2, 22);
+        Racun racun3 = new Racun(podjetje3, 22);
 
         racun2.dodaj(svece, 5);
         racun3.dodaj(svece, 2);
