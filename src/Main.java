@@ -31,6 +31,8 @@ public class Main {
 
         System.out.println(racun.toString());
 
+        System.out.println(racun.toString());
+
         if (podjetje1.Search("HENKEL")){
             System.out.println("Podjetje 1 vsebuje besedo 'HENKEL'");
         }
